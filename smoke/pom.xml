@@ -1,0 +1,14 @@
+<project>
+    <parent>
+        <groupId>org.openmrs</groupId>
+        <artifactId>openmrs-test</artifactId>
+        <version>1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.openmrs.test</groupId>
+    <artifactId>smoke</artifactId>
+    <version>1</version>
+    <name>smoke</name>
+    <description>The smoke test for openmrs</description>
+</project>
+
