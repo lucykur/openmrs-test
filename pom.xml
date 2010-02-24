@@ -46,6 +46,6 @@
             <layout>default</layout>
         </repository>
     </repositories>
-    <name>Openmrs</name>
+    <name>openmrs-test</name>
 </project>
 
