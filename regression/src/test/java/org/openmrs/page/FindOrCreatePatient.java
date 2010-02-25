@@ -1,5 +1,7 @@
 package org.openmrs.page;
 
+import org.openqa.selenium.firefox.FirefoxDriver;
+
 public class FindOrCreatePatient {
 	private final FirefoxDriver driver;
 

@@ -32,8 +32,9 @@ public class HomePageLinksTest {
 		loginPage.submit();
 
 		HomePage homePage = new HomePage(driver);
-		homePage.clickOnDictionary();
+		homePage.clickOnFindOrCreatePatient();
 		FindOrCreatePatient findOrCreatePatient=new FindOrCreatePatient(driver);
-		assertEquals("OpenMRS - Find Patient",findOrCreatePatient.getTitle());
+		System.out.println(findOrCreatePatient.getTitle());
+		Assert.assertEquals("OpenMRS - Find Patient",findOrCreatePatient.getTitle());
 	}
 }
