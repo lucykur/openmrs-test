@@ -15,7 +15,7 @@ public class CreatePatientTest {
 
 	@BeforeTest
 	public void setUp() throws Exception {
-		this.driver = driver;
+		driver = new FirefoxDriver();
 	}
 
 	@AfterTest

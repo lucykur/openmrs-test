@@ -15,6 +15,11 @@ public class FindOrCreatePatientPage extends FormPage {
 		return driver.getTitle();
 	}
 
+	@Override
+	protected void enterText(String field, String value) {
+		driver.findElement(By.id(field)).sendKeys(value);
+	}
+	
 	public void setPersonName(String personName) {
 		enterText("personName", personName);
 	}
@@ -28,7 +33,7 @@ public class FindOrCreatePatientPage extends FormPage {
 	}
 
 	public void submit() {
-		WebElement logIn = driver.findElement(By.name("personalName"));
+		WebElement logIn = driver.findElement(By.name("addName"));
 		logIn.submit();
 	}
 
