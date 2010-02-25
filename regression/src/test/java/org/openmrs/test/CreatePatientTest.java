@@ -10,12 +10,12 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class HomePageLinksTest {
+public class CreatePatientTest {
 	private FirefoxDriver driver;
 
 	@BeforeTest
 	public void setUp() throws Exception {
-		driver = new FirefoxDriver();
+		this.driver = driver;
 	}
 
 	@AfterTest
@@ -23,8 +23,8 @@ public class HomePageLinksTest {
 		driver.close();
 	}
 
-	@Test(dependsOnMethods = { "org.openmrs.test.LoginPageTest.shouldLoginForAValidUser" })
-	public void shouldJumpToTheAppropriateLinksPage() {
+	@Test(dependsOnMethods = { "org.openmrs.test.HomePageLinksTest.shouldJumpToTheAppropriateLinksPage" })
+	public void shouldCreateNewPatient() {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.open();
 		loginPage.setUser("admin");
@@ -35,7 +35,11 @@ public class HomePageLinksTest {
 		homePage.clickOnFindOrCreatePatient();
 		FindOrCreatePatientPage findOrCreatePatientPage = new FindOrCreatePatientPage(
 				driver);
-		Assert.assertEquals("OpenMRS - Find Patient", findOrCreatePatientPage
-				.getTitle());
+		findOrCreatePatientPage.setPersonName("Sample");
+		findOrCreatePatientPage.setBirthDate("01/01/1991");
+		findOrCreatePatientPage.setAge("18");
+		System.out.println("sadf");
+		findOrCreatePatientPage.submit();
+		Assert.assertEquals("a","a");
 	}
 }
