@@ -40,6 +40,6 @@ public class CreatePatientTest {
 		findOrCreatePatientPage.setAge("18");
 		System.out.println("sadf");
 		findOrCreatePatientPage.submit();
-		Assert.assertEquals("a","a");
+		Assert.assertTrue(driver.getPageSource().contains("Create a New Patient"));
 	}
 }
