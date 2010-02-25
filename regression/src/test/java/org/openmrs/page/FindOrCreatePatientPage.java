@@ -19,7 +19,7 @@ public class FindOrCreatePatientPage extends FormPage {
 	protected void enterText(String field, String value) {
 		driver.findElement(By.id(field)).sendKeys(value);
 	}
-	
+
 	public void setPersonName(String personName) {
 		enterText("personName", personName);
 	}
