@@ -1,7 +1,6 @@
 package org.openmrs.test;
 
 import junit.framework.Assert;
-
 import org.openmrs.page.HomePage;
 import org.openmrs.page.LoginPage;
 import org.openqa.selenium.firefox.FirefoxDriver;
