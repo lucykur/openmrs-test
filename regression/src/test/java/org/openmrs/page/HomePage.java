@@ -17,7 +17,7 @@ public class HomePage extends Page {
 	}
 
 	public String getPath() {
-		return "/findPatient.htm";
+		return "/index.htm";
 	}
 
 	public void clickOnFindOrCreatePatient() {
