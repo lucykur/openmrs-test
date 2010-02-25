@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 public class HomePageLinksTest {
 	private FirefoxDriver driver;
-	
+
 	@BeforeTest
 	public void setUp() throws Exception {
 		driver = new FirefoxDriver();
@@ -33,8 +33,9 @@ public class HomePageLinksTest {
 
 		HomePage homePage = new HomePage(driver);
 		homePage.clickOnFindOrCreatePatient();
-		FindOrCreatePatient findOrCreatePatient=new FindOrCreatePatient(driver);
-		System.out.println(findOrCreatePatient.getTitle());
-		Assert.assertEquals("OpenMRS - Find Patient",findOrCreatePatient.getTitle());
+		FindOrCreatePatient findOrCreatePatient = new FindOrCreatePatient(
+				driver);
+		Assert.assertEquals("OpenMRS - Find Patient", findOrCreatePatient
+				.getTitle());
 	}
 }

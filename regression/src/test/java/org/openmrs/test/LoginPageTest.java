@@ -12,7 +12,7 @@ public class LoginPageTest {
 
 	private FirefoxDriver driver;
 
-        @BeforeTest
+	@BeforeTest
 	public void setUp() throws Exception {
 		driver = new FirefoxDriver();
 	}
@@ -23,7 +23,7 @@ public class LoginPageTest {
 	}
 
 	@Test
-	public void shouldLoginForAValidUser()  {
+	public void shouldLoginForAValidUser() {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.open();
 		loginPage.setUser("admin");
