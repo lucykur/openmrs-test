@@ -8,7 +8,7 @@ public abstract class Page {
 	protected WebDriver driver;
 
 	public void open() {
-		driver.navigate().to("http://10.4.3.106:8080/openmrs" + getPath());
+		driver.navigate().to("http://192.168.56.101:8080/openmrs" + getPath());
 	}
 
 	protected abstract String getPath();

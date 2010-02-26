@@ -1,23 +1,17 @@
 package org.openmrs.page;
 
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class FindOrCreatePatientPage extends FormPage {
-	private final FirefoxDriver driver;
 
-	public FindOrCreatePatientPage(FirefoxDriver driver) {
+	public FindOrCreatePatientPage(WebDriver driver) {
 		this.driver = driver;
 	}
 
 	public String getTitle() {
 		return driver.getTitle();
-	}
-
-	@Override
-	protected void enterText(String field, String value) {
-		driver.findElement(By.id(field)).sendKeys(value);
 	}
 
 	public void setPersonName(String personName) {

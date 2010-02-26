@@ -1,25 +1,33 @@
 package org.openmrs.test;
 
 import junit.framework.Assert;
+
 import org.openmrs.page.HomePage;
 import org.openmrs.page.LoginPage;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class LoginPageTest {
 
-	private FirefoxDriver driver;
+	private WebDriver driver;
 
-	@BeforeTest
-	public void setUp() throws Exception {
-		driver = new FirefoxDriver();
+	@BeforeSuite
+	public void initializeDriver() throws Exception {
+		WebDriverFactory.setCurrentDriver(new FirefoxDriver());
 	}
 
-	@AfterTest
-	public void tearDown() throws Exception {
-		driver.close();
+	@BeforeTest
+	public void setTheDriver() throws Exception {
+		driver = WebDriverFactory.getCurrentDriver();
+	}
+
+	@AfterSuite
+	public void closeTheDriver() throws Exception {
+		WebDriverFactory.closeCurrentDriver();
 	}
 
 	@Test
