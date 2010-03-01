@@ -1,6 +1,7 @@
 package org.openmrs.test;
 
 
+import org.openmrs.User;
 import org.openmrs.page.HomePage;
 import org.openmrs.page.LoginPage;
 import org.openqa.selenium.WebDriver;
@@ -32,10 +33,11 @@ public class LoginPageTest {
 
 	@Test
 	public void shouldLoginForAValidUser() {
+		User user = new User();
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.open();
-		loginPage.setUser("admin");
-		loginPage.setPassword("Openmr5tw");
+		loginPage.setUser(user.getUsername());
+		loginPage.setPassword(user.getPassword());
 		loginPage.submit();
 
 		HomePage homePage = new HomePage(driver);

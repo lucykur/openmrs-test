@@ -25,6 +25,6 @@ public class LoginPage extends FormPage {
 	}
 
 	protected String getPath() {
-		return "/login.htm";
+		return "login.htm";
 	}
 }

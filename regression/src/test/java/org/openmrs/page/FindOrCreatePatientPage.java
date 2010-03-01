@@ -32,6 +32,6 @@ public class FindOrCreatePatientPage extends FormPage {
 	}
 
 	public String getPath() {
-		return "/findPatient.htm";
+		return "findPatient.htm";
 	}
 }
