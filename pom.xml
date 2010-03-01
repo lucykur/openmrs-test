@@ -3,12 +3,7 @@
 	<groupId>org.openmrs</groupId>
 	<artifactId>openmrs-test</artifactId>
 	<version>1</version>
-	<packaging>pom</packaging>
-	<modules>
-		<module>smoke</module>
-		<module>regression</module>
-	</modules>
-	<dependencies>
+		<dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.webdriver</groupId>
 			<artifactId>webdriver-remote-client</artifactId>
