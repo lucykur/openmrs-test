@@ -2,7 +2,6 @@ package org.openmrs.page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class FindOrCreatePatientPage extends FormPage {
 
@@ -27,11 +26,14 @@ public class FindOrCreatePatientPage extends FormPage {
 	}
 
 	public void submit() {
-		WebElement logIn = driver.findElement(By.name("addName"));
-		logIn.submit();
+		driver.findElement(By.name("addName")).submit();
 	}
 
 	public String getPath() {
 		return "findPatient.htm";
+	}
+
+	public String getHeading() {
+		return driver.findElement(By.xpath("//form[@action='newPatient.form']/h2")).getText();
 	}
 }

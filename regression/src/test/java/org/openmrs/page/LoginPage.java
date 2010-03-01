@@ -2,7 +2,6 @@ package org.openmrs.page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class LoginPage extends FormPage {
 
@@ -19,9 +18,8 @@ public class LoginPage extends FormPage {
 	}
 
 	public void submit() {
-		WebElement logIn = driver.findElement(By
-				.xpath("//input[@type='submit' and @value='Log In']"));
-		logIn.click();
+		driver.findElement(By
+				.xpath("//input[@type='submit' and @value='Log In']")).click();
 	}
 
 	protected String getPath() {

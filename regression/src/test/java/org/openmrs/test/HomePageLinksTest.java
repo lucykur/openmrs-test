@@ -17,7 +17,7 @@ public class HomePageLinksTest {
 	}
 
 	@Test(dependsOnMethods = { "org.openmrs.test.LoginPageTest.shouldLoginForAValidUser" })
-	public void shouldJumpToTheAppropriateLinksPage() {
+	public void shouldDisplayFindOrCreatePatientPage() {
 
 		HomePage homePage = new HomePage(driver);
 		homePage.clickOnFindOrCreatePatient();

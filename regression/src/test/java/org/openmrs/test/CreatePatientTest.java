@@ -15,7 +15,7 @@ public class CreatePatientTest {
 		driver = WebDriverFactory.getCurrentDriver();
 	}
 
-	@Test(dependsOnMethods = { "org.openmrs.test.HomePageLinksTest.shouldJumpToTheAppropriateLinksPage" })
+	@Test(dependsOnMethods = { "org.openmrs.test.HomePageLinksTest.shouldDisplayFindOrCreatePatientPage" })
 	public void shouldCreateNewPatient() {
 		FindOrCreatePatientPage findOrCreatePatientPage = new FindOrCreatePatientPage(
 				driver);
@@ -23,7 +23,6 @@ public class CreatePatientTest {
 		findOrCreatePatientPage.setBirthDate("01/01/1991");
 		findOrCreatePatientPage.setAge("18");
 		findOrCreatePatientPage.submit();
-		Assert.assertTrue(driver.getPageSource().contains(
-				"Create a New Patient"));
+		Assert.assertEquals("Create a New Patient", findOrCreatePatientPage.getHeading());
 	}
 }

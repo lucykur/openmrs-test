@@ -2,7 +2,6 @@ package org.openmrs.page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class HomePage extends Page {
 
@@ -20,8 +19,7 @@ public class HomePage extends Page {
 	}
 
 	public void clickOnFindOrCreatePatient() {
-		WebElement dictionary = driver.findElement(By
-				.linkText("Find/Create Patient"));
-		dictionary.click();
+		driver.findElement(By
+				.linkText("Find/Create Patient")).click();
 	}
 }
