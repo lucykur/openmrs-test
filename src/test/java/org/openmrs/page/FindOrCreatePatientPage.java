@@ -10,15 +10,15 @@ public class FindOrCreatePatientPage extends FormPage {
 	}
 
 	public void setPersonName(String personName) {
-		enterText("personName", personName);
+		enterText("addName", personName);
 	}
 
 	public void setBirthDate(String birthDate) {
-		enterText("birthdate", birthDate);
+		enterText("addBirthdate", birthDate);
 	}
 
 	public void setAge(String age) {
-		enterText("age", age);
+		enterText("addAge", age);
 	}
 
 	public void submit() {

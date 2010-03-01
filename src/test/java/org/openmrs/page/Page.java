@@ -16,11 +16,15 @@ public abstract class Page {
 	protected abstract String getPath();
 
 	protected void enterText(String field, String value) {
-		driver.findElement(By.id(field)).sendKeys(value);
+		driver.findElement(By.name(field)).sendKeys(value);
 	}
 
 	public String getTitle() {
 		return driver.getTitle();
+	}
+
+	public String getMessage() {
+		return driver.findElement(By.xpath("//div[@id='openmrs_msg']")).getText();
 	}
 
 }

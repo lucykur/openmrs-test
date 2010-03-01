@@ -10,11 +10,11 @@ public class LoginPage extends FormPage {
 	}
 
 	public void setPassword(String password) {
-		enterText("password", password);
+		enterText("pw", password);
 	}
 
 	public void setUser(String user) {
-		enterText("username", user);
+		enterText("uname", user);
 	}
 
 	public void submit() {
