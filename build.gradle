@@ -1,0 +1,26 @@
+subprojects{
+		usePlugin 'java'
+		usePlugin 'eclipse'
+		
+		repositories {
+			mavenCentral()
+		}
+		
+		dependencies {
+			testCompile 'org.testng:testng:5.9:jdk15@jar'
+			testCompile	'org.seleniumhq.webdriver:webdriver-firefox:0.9.7376'
+			testCompile	'org.seleniumhq.webdriver:webdriver-common:0.9.7376'
+
+		}
+		
+		test {
+			options.systemProperties['host.address'] = 'localhost'
+ 		   	useTestNG()
+		}
+}
+
+
+
+group='org.openmrs.test'
+
+dependsOnChildren()

@@ -1,11 +1,11 @@
 package org.openmrs.test;
 
-import junit.framework.Assert;
 
 import org.openmrs.page.HomePage;
 import org.openmrs.page.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;

@@ -1,9 +1,9 @@
 package org.openmrs.test;
 
-import junit.framework.Assert;
 
 import org.openmrs.page.FindOrCreatePatientPage;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
