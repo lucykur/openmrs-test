@@ -1,1 +1,5 @@
 Testing project for openmrs
+
+To run the tests
+
+$ mvn test -Duser.name=<user> -Duser.password=<password> -Dhost.address=<host> 
