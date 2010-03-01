@@ -4,6 +4,7 @@ package org.openmrs.test;
 import org.openmrs.User;
 import org.openmrs.page.HomePage;
 import org.openmrs.page.LoginPage;
+import org.openmrs.page.Page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
@@ -40,7 +41,7 @@ public class LoginPageTest {
 		loginPage.setPassword(user.getPassword());
 		loginPage.submit();
 
-		HomePage homePage = new HomePage(driver);
+		Page homePage = new HomePage(driver);
 		Assert.assertEquals("OpenMRS - Home", homePage.getTitle());
 	}
 }

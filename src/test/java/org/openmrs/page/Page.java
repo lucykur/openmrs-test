@@ -19,4 +19,8 @@ public abstract class Page {
 		driver.findElement(By.id(field)).sendKeys(value);
 	}
 
+	public String getTitle() {
+		return driver.getTitle();
+	}
+
 }

@@ -9,10 +9,6 @@ public class FindOrCreatePatientPage extends FormPage {
 		this.driver = driver;
 	}
 
-	public String getTitle() {
-		return driver.getTitle();
-	}
-
 	public void setPersonName(String personName) {
 		enterText("personName", personName);
 	}
@@ -33,7 +29,4 @@ public class FindOrCreatePatientPage extends FormPage {
 		return "findPatient.htm";
 	}
 
-	public String getHeading() {
-		return driver.findElement(By.xpath("//form[@action='newPatient.form']/h2")).getText();
-	}
 }

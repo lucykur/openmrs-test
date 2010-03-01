@@ -10,16 +10,17 @@ public class HomePage extends Page {
 
 	}
 
-	public String getTitle() {
-		return driver.getTitle();
-	}
-
 	public String getPath() {
 		return "index.htm";
 	}
 
-	public void clickOnFindOrCreatePatient() {
+	public void displayCreatePatientPage() {
 		driver.findElement(By
 				.linkText("Find/Create Patient")).click();
+	}
+
+	public void displayAdministationPage() {
+		// TODO Auto-generated method stub
+		
 	}
 }
