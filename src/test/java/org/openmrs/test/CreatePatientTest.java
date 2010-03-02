@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class CreatePatientTest {
 
-	@Test(dependsOnMethods = { "org.openmrs.test.LoginPageTest.shouldLoginForAValidUser" })
+	@Test(dependsOnMethods = { "org.openmrs.test.LoginPageTest.shouldLoginForAValidUser" }, groups = { "regression" })
 	public void shouldOpenFindOrCreatePatientPage() {
 		FindOrCreatePatientPage findOrCreatePatientPage = new FindOrCreatePatientPage(
 				WebDriverFactory.getCurrentDriver());
@@ -16,7 +16,7 @@ public class CreatePatientTest {
 				.getTitle());
 	}
 
-	@Test(dependsOnMethods = { "shouldOpenFindOrCreatePatientPage" })
+	@Test(dependsOnMethods = { "shouldOpenFindOrCreatePatientPage" }, groups = { "regression" })
 	public void shouldOpenNewPatientPage() {
 		FindOrCreatePatientPage findOrCreatePatientPage = new FindOrCreatePatientPage(
 				WebDriverFactory.getCurrentDriver());
@@ -24,7 +24,7 @@ public class CreatePatientTest {
 		findOrCreatePatientPage.setBirthDate("01/01/1991");
 		findOrCreatePatientPage.setAge("18");
 		findOrCreatePatientPage.submit();
-		Assert.assertEquals("Create a New Patient", new NewPatientPage(WebDriverFactory.getCurrentDriver())
-				.getTitle());
+		Assert.assertEquals("Create a New Patient", new NewPatientPage(
+				WebDriverFactory.getCurrentDriver()).getTitle());
 	}
 }

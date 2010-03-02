@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class ManageLocationsTest {
 
-	@Test(dependsOnMethods = { "org.openmrs.test.AdministrationPageTest.shouldOpenAdministrationPage" })
+	@Test(dependsOnMethods = { "org.openmrs.test.AdministrationPageTest.shouldOpenAdministrationPage" }, groups = { "smoke" })
 	public void shouldOpenManageLocationsPage() {
 		Page manageLocationsPage = new ManageLocationsPage(WebDriverFactory
 				.getCurrentDriver());
@@ -17,7 +17,7 @@ public class ManageLocationsTest {
 				.getTitle());
 	}
 
-	@Test(dependsOnMethods = { "shouldOpenManageLocationsPage" })
+	@Test(dependsOnMethods = { "shouldOpenManageLocationsPage" }, groups = { "smoke" })
 	public void shouldOpenNewLocationPage() throws Exception {
 		ManageLocationsPage manageLocationsPage = new ManageLocationsPage(
 				WebDriverFactory.getCurrentDriver());
@@ -27,7 +27,7 @@ public class ManageLocationsTest {
 		Assert.assertEquals("Location", newLocationPage.getTitle());
 	}
 
-	@Test(dependsOnMethods = { "shouldOpenNewLocationPage" })
+	@Test(dependsOnMethods = { "shouldOpenNewLocationPage" }, groups = { "smoke" })
 	public void shouldAddNewLocation() throws Exception {
 		NewLocationPage newLocationPage = new NewLocationPage(WebDriverFactory
 				.getCurrentDriver());
@@ -38,7 +38,7 @@ public class ManageLocationsTest {
 				WebDriverFactory.getCurrentDriver()).getMessage());
 	}
 
-	@Test(dependsOnMethods = { "shouldAddNewLocation" })
+	@Test(dependsOnMethods = { "shouldAddNewLocation" }, groups = { "smoke" })
 	public void shouldDeleteLocation() throws Exception {
 		ManageLocationsPage manageLocationsPage = new ManageLocationsPage(
 				WebDriverFactory.getCurrentDriver());

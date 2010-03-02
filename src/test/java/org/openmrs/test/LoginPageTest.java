@@ -1,12 +1,10 @@
 package org.openmrs.test;
 
-
 import org.openmrs.User;
 import org.openmrs.page.HomePage;
 import org.openmrs.page.LoginPage;
 import org.openmrs.page.Page;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
@@ -18,22 +16,22 @@ public class LoginPageTest {
 
 	private WebDriver driver;
 
-	@BeforeSuite
+	@BeforeSuite(groups = { "smoke", "regression" })
 	public void initializeDriver() throws Exception {
 		WebDriverFactory.setCurrentDriver(new HtmlUnitDriver());
 	}
 
-	@BeforeTest
+	@BeforeTest(groups = { "smoke", "regression" })
 	public void setTheDriver() throws Exception {
 		driver = WebDriverFactory.getCurrentDriver();
 	}
 
-	@AfterSuite
+	@AfterSuite(groups = { "smoke", "regression" })
 	public void closeTheDriver() throws Exception {
 		WebDriverFactory.closeCurrentDriver();
 	}
 
-	@Test
+	@Test(groups = { "smoke", "regression" })
 	public void shouldLoginForAValidUser() {
 		User user = new User();
 		LoginPage loginPage = new LoginPage(driver);
