@@ -6,17 +6,17 @@ Project for running smoke and regression tests against running openMRS instance
 
 === Running tests on a headless browser
 
-$ mvn test -Duser.name=<user> -Duser.password=<password> -Dhost.address=<host:port> 
+	$ mvn test -Duser.name=<user> -Duser.password=<password> -Dhost.address=<host:port> 
 
 === Running tests on firefox
 
-$ mvn test -Duser.name=<user> -Duser.password=<password> -Dhost.address=<host:port> -Ddriver.clazz=org.openqa.selenium.firefox.FirefoxDriver
+	$ mvn test -Duser.name=<user> -Duser.password=<password> -Dhost.address=<host:port> -Ddriver.clazz=org.openqa.selenium.firefox.FirefoxDriver
 
 === Running only smoke tests
 
-$ mvn test -Duser.name=<user> -Duser.password=<password> -Dhost.address=<host:port> -Dgroups=smoke
+	$ mvn test -Duser.name=<user> -Duser.password=<password> -Dhost.address=<host:port> -Dgroups=smoke
 
 === Running only regression tests
 
-$ mvn test -Duser.name=<user> -Duser.password=<password> -Dhost.address=<host:port> -Dgroups=regression
+	$ mvn test -Duser.name=<user> -Duser.password=<password> -Dhost.address=<host:port> -Dgroups=regression
 
