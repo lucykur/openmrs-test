@@ -1,9 +1,0 @@
-Testing project for openmrs
-
-To run the tests (in memory without a browser)
-
-$ mvn test -Duser.name=<user> -Duser.password=<password> -Dhost.address=<host:port> 
-
-If you want to run the test on the firefox browser
-
-$ mvn test -Duser.name=<user> -Duser.password=<password> -Dhost.address=<host:port> -Ddriver.clazz=org.openqa.selenium.firefox.FirefoxDriver
