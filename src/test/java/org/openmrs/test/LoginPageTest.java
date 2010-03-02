@@ -7,6 +7,7 @@ import org.openmrs.page.LoginPage;
 import org.openmrs.page.Page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -19,7 +20,7 @@ public class LoginPageTest {
 
 	@BeforeSuite
 	public void initializeDriver() throws Exception {
-		WebDriverFactory.setCurrentDriver(new FirefoxDriver());
+		WebDriverFactory.setCurrentDriver(new HtmlUnitDriver());
 	}
 
 	@BeforeTest

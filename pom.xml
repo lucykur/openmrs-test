@@ -21,6 +21,11 @@
 			<artifactId>webdriver-firefox</artifactId>
 			<version>0.9.7376</version>
 		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.webdriver</groupId>
+			<artifactId>webdriver-htmlunit</artifactId>
+			<version>0.9.7376</version>
+		</dependency>		
 	</dependencies>
 	<build>
 		<plugins>
