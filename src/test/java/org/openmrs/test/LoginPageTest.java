@@ -1,5 +1,6 @@
 package org.openmrs.test;
 
+import org.openmrs.Driver;
 import org.openmrs.User;
 import org.openmrs.page.HomePage;
 import org.openmrs.page.LoginPage;
@@ -18,7 +19,8 @@ public class LoginPageTest {
 
 	@BeforeSuite(groups = { "smoke", "regression" })
 	public void initializeDriver() throws Exception {
-		WebDriverFactory.setCurrentDriver(new HtmlUnitDriver());
+		WebDriverFactory.setCurrentDriver((WebDriver) Class.forName(
+				new Driver().getClazz()).newInstance());
 	}
 
 	@BeforeTest(groups = { "smoke", "regression" })
