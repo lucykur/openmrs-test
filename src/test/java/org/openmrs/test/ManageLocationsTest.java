@@ -1,8 +1,8 @@
 package org.openmrs.test;
 
-import org.openmrs.page.ManageLocationsPage;
-import org.openmrs.page.NewLocationPage;
-import org.openmrs.page.Page;
+import org.openmrs.test.page.Page;
+import org.openmrs.test.page.administration.ManageLocationsPage;
+import org.openmrs.test.page.administration.NewLocationPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

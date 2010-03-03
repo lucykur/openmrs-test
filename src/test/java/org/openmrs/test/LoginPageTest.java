@@ -1,12 +1,11 @@
 package org.openmrs.test;
 
-import org.openmrs.Driver;
-import org.openmrs.User;
-import org.openmrs.page.HomePage;
-import org.openmrs.page.LoginPage;
-import org.openmrs.page.Page;
+import org.openmrs.test.page.Page;
+import org.openmrs.test.page.home.HomePage;
+import org.openmrs.test.page.home.LoginPage;
+import org.openmrs.test.parameter.Driver;
+import org.openmrs.test.parameter.User;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;

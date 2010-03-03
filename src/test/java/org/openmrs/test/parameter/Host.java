@@ -1,4 +1,4 @@
-package org.openmrs;
+package org.openmrs.test.parameter;
 
 
 public class Host {

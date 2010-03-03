@@ -1,5 +1,6 @@
-package org.openmrs.page;
+package org.openmrs.test.page.home;
 
+import org.openmrs.test.page.FormPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

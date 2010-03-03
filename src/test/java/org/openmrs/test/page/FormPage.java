@@ -1,4 +1,4 @@
-package org.openmrs.page;
+package org.openmrs.test.page;
 
 public abstract class FormPage extends Page {
 

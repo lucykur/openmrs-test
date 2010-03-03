@@ -1,7 +1,7 @@
 package org.openmrs.test;
 
-import org.openmrs.page.FindOrCreatePatientPage;
-import org.openmrs.page.NewPatientPage;
+import org.openmrs.test.page.patient.FindOrCreatePatientPage;
+import org.openmrs.test.page.patient.NewPatientPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

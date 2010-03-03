@@ -1,6 +1,6 @@
 package org.openmrs.test;
 
-import org.openmrs.page.AdministationPage;
+import org.openmrs.test.page.administration.AdministationPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

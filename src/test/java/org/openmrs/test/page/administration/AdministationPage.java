@@ -1,5 +1,6 @@
-package org.openmrs.page;
+package org.openmrs.test.page.administration;
 
+import org.openmrs.test.page.Page;
 import org.openqa.selenium.WebDriver;
 
 public class AdministationPage extends Page {

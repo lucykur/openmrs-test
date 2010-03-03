@@ -1,6 +1,6 @@
-package org.openmrs.page;
+package org.openmrs.test.page;
 
-import org.openmrs.Host;
+import org.openmrs.test.parameter.Host;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

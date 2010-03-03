@@ -1,4 +1,4 @@
-package org.openmrs;
+package org.openmrs.test.parameter;
 
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
