@@ -3,7 +3,7 @@
 	<groupId>org.openmrs</groupId>
 	<artifactId>openmrs-test</artifactId>
 	<version>1</version>
-		<dependencies>
+	<dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.webdriver</groupId>
 			<artifactId>webdriver-remote-client</artifactId>
@@ -25,7 +25,13 @@
 			<groupId>org.seleniumhq.webdriver</groupId>
 			<artifactId>webdriver-htmlunit</artifactId>
 			<version>0.9.7376</version>
-		</dependency>		
+		</dependency>
+		<dependency>
+			<groupId>org.uncommons</groupId>
+			<artifactId>reportng</artifactId>
+			<version>1.0</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -42,7 +48,55 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
 					<forkMode>never</forkMode>
+					<properties>
+						<property>
+							<name>listener</name>
+							<value>
+								org.uncommons.reportng.JUnitXMLReporter
+							</value>
+						</property>
+					</properties>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.3</version>
+				<executions>
+					<execution>
+						<id>test</id>
+						<phase>test</phase>
+						<configuration>
+							<tasks>
+								<mkdir dir="${basedir}/target/junit" />
+								<mkdir dir="${basedir}/target/junit2" />
+
+								<junitreport todir="${basedir}/target/junit">
+									<fileset dir="${basedir}/target/surefire-reports/xml">
+										<include name="*.xml" />
+									</fileset>
+									<report format="frames" todir="${basedir}/target/junit2" />
+									<!--<report format="noframes" todir=""/>-->
+								</junitreport>
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.ant</groupId>
+						<artifactId>ant-junit</artifactId>
+						<version>1.7.1</version>
+					</dependency>
+					<dependency>
+						<groupId>org.apache.ant</groupId>
+						<artifactId>ant-trax</artifactId>
+						<version>1.7.0</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
@@ -55,4 +109,12 @@
 		</repository>
 	</repositories>
 	<name>Openmrs</name>
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</reporting>
 </project>
