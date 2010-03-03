@@ -1,12 +1,12 @@
 
 http://openmrs.org/images/0/0d/OpenMRS-logo-600x219.gif
 
-Project for running smoke and regression tests against running openMRS instance
+= A functional test suite for OpenMRS
 
 == Prerequisites
 
 * Java 1.6 SDK 
-* Maven (http://mavem.apache.org)
+* Maven (http://maven.apache.org)
 
 == Usage
 
