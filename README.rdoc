@@ -3,7 +3,7 @@ http://openmrs.org/images/0/0d/OpenMRS-logo-600x219.gif
 
 = A functional test suite for OpenMRS
 
-== Prerequisites
+== Pre-requisites
 
 * Java 1.6 SDK 
 * Maven (http://maven.apache.org)
