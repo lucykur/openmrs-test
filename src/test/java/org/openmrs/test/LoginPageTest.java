@@ -6,6 +6,8 @@ import org.openmrs.test.page.Page;
 import org.openmrs.test.page.home.HomePage;
 import org.openmrs.test.page.home.LoginPage;
 import org.openmrs.test.parameter.Driver;
+import org.openmrs.test.parameter.Host;
+import org.openmrs.test.parameter.Profiling;
 import org.openmrs.test.parameter.User;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -18,12 +20,18 @@ public class LoginPageTest {
 
     private WebDriver driver;
     private Controller controller;
+    private Profiling profiling;
 
     @BeforeSuite(groups = {"smoke", "regression"})
     public void initializeDriver() throws Exception {
+
         WebDriverFactory.setCurrentDriver((WebDriver) Class.forName(
                 new Driver().getClazz()).newInstance());
-        new Controller("localhost", 10001).startCPUProfiling(ProfilingModes.CPU_SAMPLING, "");
+        profiling = new Profiling();
+        if (profiling.isEnabled()) {
+
+            new Controller(new Host().getAddress(), profiling.getPort()).startCPUProfiling(ProfilingModes.CPU_SAMPLING, "");
+        }
     }
 
     @BeforeTest(groups = {"smoke", "regression"})
@@ -33,9 +41,12 @@ public class LoginPageTest {
 
     @AfterSuite(groups = {"smoke", "regression"})
     public void closeTheDriver() throws Exception {
-        controller = new Controller("localhost", 10001);
-        controller.captureMemorySnapshot();
-        controller.stopCPUProfiling();
+        if (profiling.isEnabled()) {
+
+            controller = new Controller("localhost", 10001);
+            controller.captureMemorySnapshot();
+            controller.stopCPUProfiling();
+        }
         WebDriverFactory.closeCurrentDriver();
 
     }

@@ -9,7 +9,8 @@ public abstract class Page {
 	protected WebDriver driver;
 
 	public void open() {
-		String url = String.format("http://%s/openmrs/%s",new Host().getAddress(),getPath());
+        Host host = new Host();
+        String url = String.format("http://%s:%s/openmrs/%s", host.getAddress(),host.getPort(),getPath());
 		driver.navigate().to(url);
 	}
 
